@@ -1,0 +1,27 @@
+<hr/>
+<div class="books" [hidden]="create">
+    <label for="title">Seleccione un autor:</label>
+    <select name="authors" [(ngModel)]="autorSeleccionado">
+        <option [value]="autor.id" *ngFor="let autor of autores">{{autor.name}} {{autor.lastName}}</option>
+    </select>
+    <br/><br/>
+    <label for="title">Titulo del libro:</label>
+    <input id="title" [(ngModel)]="book.title" placeholder="Titulo del libro"/>
+    <br/><br/>
+    <label for="pages">Numero de paginas:</label>
+    <input id="pages" [(ngModel)]="book.numberOfPages" placeholder="Numero de paginas"/>
+    <br/><br/>
+    <label for="publicationDate">Fecha de publicacion:</label>
+    <input id="publicationDate" [(ngModel)]="book.publishedDate" placeholder="Fecha de publicacion"/>
+    <br/><br/> 
+    <label for="genre">Género:</label>
+    <input id="genre" [(ngModel)]="book.gender" placeholder="Género del libro"/>   
+    <br/><br/>
+    <button (click)="guardarLibro()">Guardar Libro</button> 
+</div>
+<div class="books" [hidden]="!create">
+    <h2>Libro creado exitosamente</h2>
+    <p>El libro ha sido creado con éxito. Puedes cerrar esta ventana o crear otro libro.</p>
+    <button (click)="createNewBook()">Crear otro libro</button>
+
+

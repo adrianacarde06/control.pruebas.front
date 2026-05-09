@@ -1,0 +1,33 @@
+<hr/>
+<div class="books">
+
+    <h2>Listado de Libros</h2>
+
+    <h4>{{ books.length }} libros encontrados</h4>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Páginas</th>
+                <th>Fecha de Publicación</th>
+                <th>Género</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of books">
+                <td>{{ book.id }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.numberOfPages }}</td>
+                <td>{{ book.publishedDate }}</td>
+                <td>{{ book.gender }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br/>
+    <br/>
+    <button (click)="obtenerLibros()">Consultar Libros</button>
+
+
+</div>

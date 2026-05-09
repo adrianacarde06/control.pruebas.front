@@ -1,0 +1,42 @@
+<hr/>
+<div class="authors">
+
+    <h2>Listado de Autores</h2>
+
+    <h4>{{ autores.length }} autores encontrados</h4>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Fecha de Nacimiento</th>
+                <th>País</th>
+                <th>Biografía</th>
+                <th>Libros</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let autor of autores">
+                <td>{{ autor.id }}</td>
+                <td>{{ autor.name }}</td>
+                <td>{{ autor.lastName }}</td>
+                <td>{{ autor.birthDate | date }}</td>
+                <td>{{ autor.country }}</td>
+                <td>{{ autor.biography }}</td>
+                <td>
+                    <ul>
+                        <li *ngFor="let book of autor.books">
+                            {{ book.title }}
+                        </li>
+                    </ul>
+            </tr>
+        </tbody>
+    </table>
+    <br/>
+    <br/>
+    <button (click)="obtenerAutores()">Consultar Autores</button>
+
+
+</div>

@@ -1,0 +1,39 @@
+<hr/>
+<div class="authors" [hidden]="create">
+
+    <label for="name">Nombre:</label>
+    <input id="name" [(ngModel)]="autor.name" placeholder="Nombre del autor"/>
+    <br/><br/>
+    <label for="lastName">Apellido:</label>
+    <input id="lastName" [(ngModel)]="autor.lastName" placeholder="Apellido del autor"/>
+    <br/><br/>
+    <label for="birthDate">Fecha de Nacimiento:</label>
+    <input id="birthDate" [(ngModel)]="autor.birthDate" placeholder="Fecha de nacimiento del autor"/>
+    <br/><br/>
+    <label for="country">País:</label>
+    <input id="country" [(ngModel)]="autor.country" placeholder="País del autor"/>
+    <br/><br/>
+    <label for="biography">Biografía:</label>
+    <input id="biography" [(ngModel)]="autor.biography" placeholder="Biografía del autor"/>
+    <br/><br/>
+    <hr/>
+    <label for="title">Titulo del libro:</label>
+    <input id="title" [(ngModel)]="book.title" placeholder="Titulo del libro"/>
+    <br/><br/>
+    <label for="pages">Numero de paginas:</label>
+    <input id="pages" [(ngModel)]="book.numberOfPages" placeholder="Numero de paginas"/>
+    <br/><br/>
+    <label for="publicationDate">Fecha de publicacion:</label>
+    <input id="publicationDate" [(ngModel)]="book.publishedDate" placeholder="Fecha de publicacion"/>
+    <br/><br/>
+    <label for="genre">Género:</label>
+    <input id="genre" [(ngModel)]="book.gender" placeholder="Género del libro"/>
+
+    <br/><br/>
+    <button (click)="guardarAutor()">Guardar Autor</button>
+</div>
+<div class="authors" [hidden]="!create">
+    <h2>Autor creado exitosamente</h2>
+    <p>El autor ha sido creado con éxito. Puedes cerrar esta ventana o crear otro autor.</p>
+    <button (click)="createNewAuthor()">Crear otro autor</button>
+</div>
